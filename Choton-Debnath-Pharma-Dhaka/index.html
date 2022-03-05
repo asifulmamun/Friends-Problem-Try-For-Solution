@@ -1,0 +1,118 @@
+<style>
+    #full_wrapper {
+        width: 100%;
+        min-height: 90vh;
+        background-size: cover !important;
+
+        position: relative;
+    }
+
+    #mini_section {
+        position: absolute;
+        min-width: 45%;
+        top: 25%;
+        left: 15%;
+        background-color: white;
+        padding: 2rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 10px;
+    }
+
+    button {
+        background-color: white;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    button:hover:after,
+    button:focus:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        left: 0;
+        bottom: -11px;
+    }
+
+    #mini_content {
+        padding-top: 25px;
+    }
+
+    .a_button {
+        padding: 12px;
+        color: white;
+        background-color: rgb(31, 30, 30);
+        text-decoration: none;
+    }
+</style>
+
+<div id="full_wrapper">
+    <div id="mini_section">
+        <div id="button">
+            <button class="w3-bar-item w3-button" onclick="tabMaster('tab_one')">গাড়ি চালান বা ডেলিভার করুন</button>
+            <button class="w3-bar-item w3-button" onclick="tabMaster('tab_two')">Eat (ইট)</button>
+            <button class="w3-bar-item w3-button" onclick="tabMaster('tab_three')">রাইড নিন</button>
+        </div>
+
+
+        <div id="mini_content">
+            <div id="tab_one" class="w3-container city">
+                <h2>ড্রাইভারের সিটে বসুন এবং উপার্জন করুন</h2>
+                <p>সক্রিয় যাত্রীদের বৃহত্তম নেটওয়ার্ক সম্বলিত প্ল্যাটফর্মে গাড়ি চালান।</p>
+                <a class="a_button" href="#">গাড়ি চালানোর জন্য সাইন আপ করুন</a>
+            </div>
+
+            <div id="tab_two" class="w3-container city" style="display:none">
+                <h2>সুস্বাদু খাবারগুলো খুঁজে নিন</h2>
+                <p>সক্রিয় যাত্রীদের বৃহত্তম নেটওয়ার্ক সম্বলিত প্ল্যাটফর্মে গাড়ি চালান।</p>
+                <a class="a_button" href="#">গাড়ি চালানোর জন্য সাইন আপ করুন</a>
+            </div>
+
+            <div id="tab_three" class="w3-container city" style="display:none">
+                <h2>এখন একটা যাত্রার রিকোয়েস্ট করুন</h2>
+                <p>সক্রিয় যাত্রীদের বৃহত্তম নেটওয়ার্ক সম্বলিত প্ল্যাটফর্মে গাড়ি চালান।</p>
+                <a class="a_button" href="#">গাড়ি চালানোর জন্য সাইন আপ করুন</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    // Bg Url
+    const wrapBgOne = 'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1351,h_667/v1613521435/assets/bc/0529b6-c37a-416b-9907-2cb44c4c2888/original/Earner_Home_bg_desktop2x.png';
+    const wrapBgTwo = 'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1351,h_535/v1613521576/assets/9d/2ff1e0-a207-425a-a1b8-cf40c95d6567/original/Eats_Home_bg_desktop2x.png';
+    const wrapBgThree = 'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1351,h_708/v1613521692/assets/d9/ce6c00-32b0-4b93-9f0d-6f927d93da08/original/Rider_Home_bg_desktop2x.png';
+
+    // Default BG
+    document.getElementById('full_wrapper').style.background = "#f3f3f3 url(" + wrapBgOne + ") no-repeat";;
+    document.getElementById('full_wrapper').style.backgroundSize = "cover !important";;
+
+    function tabMaster(tabName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+
+        if (tabName == "tab_three") {
+            document.getElementById('full_wrapper').style.background = "#f3f3f3 url(" + wrapBgThree + ") no-repeat";;
+        }
+        else if (tabName == "tab_two") {
+            document.getElementById('full_wrapper').style.background = "#f3f3f3 url(" + wrapBgTwo + ") no-repeat";;
+        } else {
+            document.getElementById('full_wrapper').style.background = "#f3f3f3 url(" + wrapBgOne + ") no-repeat";;
+        }
+    }
+
+</script>
